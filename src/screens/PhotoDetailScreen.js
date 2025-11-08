@@ -30,7 +30,9 @@ const PhotoDetailScreen = ({ photo, onClose }) => {
         <SafeAreaView style={styles.safeArea}>
           <ScrollView 
             contentContainerStyle={styles.scrollContent}
-            showsVerticalScrollIndicator={false}
+            showsVerticalScrollIndicator={true}
+            nestedScrollEnabled={true}
+            style={styles.scrollView}
           >
             {/* Header */}
             <View style={styles.header}>
@@ -130,6 +132,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#000',
+    height: '100vh',
   },
   backgroundImage: {
     position: 'absolute',
@@ -138,12 +141,18 @@ const styles = StyleSheet.create({
   },
   overlay: {
     flex: 1,
+    height: '100%',
   },
   safeArea: {
+    flex: 1,
+    height: '100%',
+  },
+  scrollView: {
     flex: 1,
   },
   scrollContent: {
     padding: 20,
+    paddingBottom: 100,
   },
   header: {
     flexDirection: 'row',

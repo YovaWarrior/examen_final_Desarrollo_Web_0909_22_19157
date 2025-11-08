@@ -116,8 +116,8 @@ const GalleryScreen = () => {
         <SafeAreaView style={styles.safeArea}>
           <FlatList
             data={photos}
-            renderItem={({ item }) => (
-              <PhotoCard photo={item} onPress={handlePhotoPress} />
+            renderItem={({ item, index }) => (
+              <PhotoCard photo={item} onPress={handlePhotoPress} index={index} />
             )}
             keyExtractor={(item) => item.id}
             numColumns={2}

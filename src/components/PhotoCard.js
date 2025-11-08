@@ -1,14 +1,43 @@
-import React from 'react';
-import { View, Image, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
+import React, { useEffect, useRef } from 'react';
+import { View, Image, Text, StyleSheet, TouchableOpacity, Dimensions, Animated } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 const { width } = Dimensions.get('window');
 const CARD_WIDTH = (width - 48) / 2;
 
-const PhotoCard = ({ photo, onPress }) => {
+const PhotoCard = ({ photo, onPress, index = 0 }) => {
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const slideAnim = useRef(new Animated.Value(30)).current;
+
+  useEffect(() => {
+    Animated.parallel([
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 600,
+        delay: index * 50,
+        useNativeDriver: true,
+      }),
+      Animated.timing(slideAnim, {
+        toValue: 0,
+        duration: 600,
+        delay: index * 50,
+        useNativeDriver: true,
+      }),
+    ]).start();
+  }, []);
+
   return (
-    <TouchableOpacity onPress={() => onPress(photo)} style={styles.cardContainer}>
-      <View style={styles.card}>
+    <Animated.View 
+      style={[
+        styles.cardContainer,
+        {
+          opacity: fadeAnim,
+          transform: [{ translateY: slideAnim }],
+        },
+      ]}
+    >
+      <TouchableOpacity onPress={() => onPress(photo)} activeOpacity={0.8}>
+        <View style={styles.card}>
         <Image
           source={{ uri: photo.download_url }}
           style={styles.image}
@@ -38,7 +67,8 @@ const PhotoCard = ({ photo, onPress }) => {
         <View style={styles.cornerBottomLeft} />
         <View style={styles.cornerBottomRight} />
       </View>
-    </TouchableOpacity>
+      </TouchableOpacity>
+    </Animated.View>
   );
 };
 
