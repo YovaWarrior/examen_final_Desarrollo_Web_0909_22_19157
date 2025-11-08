@@ -135,7 +135,8 @@ const GalleryScreen = () => {
                 colors={['#00d4ff', '#ff00ff']}
               />
             }
-            showsVerticalScrollIndicator={false}
+            showsVerticalScrollIndicator={true}
+            nestedScrollEnabled={true}
           />
         </SafeAreaView>
       </LinearGradient>
@@ -158,12 +159,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#0a0a1e',
+    height: '100vh',
   },
   gradient: {
     flex: 1,
+    height: '100%',
   },
   safeArea: {
     flex: 1,
+    height: '100%',
   },
   loadingContainer: {
     flex: 1,
@@ -231,6 +235,7 @@ const styles = StyleSheet.create({
   },
   listContent: {
     padding: 16,
+    paddingBottom: 100,
   },
   row: {
     justifyContent: 'space-between',
