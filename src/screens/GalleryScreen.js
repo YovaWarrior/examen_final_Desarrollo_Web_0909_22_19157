@@ -204,9 +204,9 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 36,
     fontWeight: 'bold',
-    color: '#00d4ff',
+    color: '#9df9ef',
     letterSpacing: 8,
-    textShadowColor: '#00d4ff',
+    textShadowColor: '#9df9ef',
     textShadowOffset: { width: 0, height: 0 },
     textShadowRadius: 20,
   },
