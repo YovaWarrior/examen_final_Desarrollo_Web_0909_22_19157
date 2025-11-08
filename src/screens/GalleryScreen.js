@@ -72,11 +72,11 @@ const GalleryScreen = () => {
 
   const renderHeader = () => (
     <View style={styles.headerContainer}>
-      <Text style={styles.title}>FUTURISTIC</Text>
-      <Text style={styles.subtitle}>GALLERY</Text>
+      <Text style={styles.title}>GALERÍA</Text>
+      <Text style={styles.subtitle}>FUTURISTA</Text>
       <View style={styles.headerLine} />
       <Text style={styles.photoCount}>
-        {photos.length} PHOTOS LOADED
+        {photos.length} FOTOS CARGADAS
       </Text>
     </View>
   );
@@ -99,7 +99,7 @@ const GalleryScreen = () => {
         <StatusBar style="light" />
         <View style={styles.loaderBox}>
           <ActivityIndicator size="large" color="#00d4ff" />
-          <Text style={styles.loadingText}>Loading Gallery...</Text>
+          <Text style={styles.loadingText}>Cargando Galería...</Text>
           <View style={styles.loadingLine} />
         </View>
       </LinearGradient>

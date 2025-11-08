@@ -42,7 +42,7 @@ const PhotoDetailScreen = ({ photo, onClose }) => {
                   <Text style={styles.closeButtonText}>✕</Text>
                 </LinearGradient>
               </TouchableOpacity>
-              <Text style={styles.title}>PHOTO DETAILS</Text>
+              <Text style={styles.title}>DETALLES DE FOTO</Text>
             </View>
 
             {/* Main Image */}
@@ -61,7 +61,7 @@ const PhotoDetailScreen = ({ photo, onClose }) => {
             {/* Info Grid */}
             <View style={styles.infoGrid}>
               <InfoCard
-                label="AUTHOR"
+                label="AUTOR"
                 value={photo.author}
                 icon="👤"
                 color="#00d4ff"
@@ -73,13 +73,13 @@ const PhotoDetailScreen = ({ photo, onClose }) => {
                 color="#ff00ff"
               />
               <InfoCard
-                label="WIDTH"
+                label="ANCHO"
                 value={`${photo.width}px`}
                 icon="↔️"
                 color="#00ff88"
               />
               <InfoCard
-                label="HEIGHT"
+                label="ALTO"
                 value={`${photo.height}px`}
                 icon="↕️"
                 color="#ffaa00"
@@ -88,7 +88,7 @@ const PhotoDetailScreen = ({ photo, onClose }) => {
 
             {/* URL Section */}
             <View style={styles.urlContainer}>
-              <Text style={styles.urlLabel}>ORIGINAL URL</Text>
+              <Text style={styles.urlLabel}>URL ORIGINAL</Text>
               <View style={styles.urlBox}>
                 <Text style={styles.urlText} numberOfLines={2}>
                   {photo.url}
@@ -98,7 +98,7 @@ const PhotoDetailScreen = ({ photo, onClose }) => {
 
             {/* Download URL Section */}
             <View style={styles.urlContainer}>
-              <Text style={styles.urlLabel}>DOWNLOAD URL</Text>
+              <Text style={styles.urlLabel}>URL DE DESCARGA</Text>
               <View style={styles.urlBox}>
                 <Text style={styles.urlText} numberOfLines={2}>
                   {photo.download_url}
